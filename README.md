@@ -1,4 +1,4 @@
-Turtle-Crossing-game
+Turtle Crossing game
 
 Game instructions:
 
