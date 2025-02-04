@@ -4,7 +4,7 @@ from turtle import Turtle
 FONT = ("Courier", 24, "normal")
 START_POSITION = (-260, 250)
 
-#### Class for Scoreboard ####
+##---- Class for Scoreboard ----##
 class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
@@ -15,13 +15,13 @@ class Scoreboard(Turtle):
         self.goto(START_POSITION)
         self.write(f"Level: {self.level}", False, "left", FONT)
 
-    #### Function to trigger level increase ####
+    ## Function to trigger level increase
     def level_up(self):
         self.clear()
         self.level += 1
         self.write(f"Level: {self.level}", False, "left", FONT)
 
-    #### Function to trigger gameover ####
+    ## Function to trigger gameover
     def game_over(self):
         self.goto(0,0)
         self.write("Game Over!", False, "center", FONT)
