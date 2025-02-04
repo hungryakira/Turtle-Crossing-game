@@ -7,14 +7,14 @@ MOVE_INCREMENT = 5
 
 car_list = []
 
-#### Class for managing cars ####
+##---- Class for managing cars ----##
 class CarManager(Turtle):
     def __init__(self):
         super().__init__()
         self.hideturtle()
         self.car_speed = STARTING_MOVE_DISTANCE
 
-    #### function to spawn cars ####
+    ## function to spawn cars
     def spawn_car(self):
 
         random_roll = randint(1,6)
@@ -30,17 +30,17 @@ class CarManager(Turtle):
             ycor = randint(-230, 250)
             new_car.goto (295,ycor)
 
-    #### Function for collision detection ####
+    ## Function for collision detection
     def car_crash(self,target):
         for car in car_list:
             if car.distance(target) < 20:
                 return True
 
-    #### Function for car speed increase ####
+    ## Function for car speed increase
     def speed_up(self):
         self.car_speed += MOVE_INCREMENT
 
-    #### Function to move cars ####
+    ## Function to move cars
     def move_cars(self):
         for car in car_list:
             car.forward(self.car_speed)
