@@ -4,25 +4,25 @@ import time
 from car_manager import CarManager
 from scoreboard import Scoreboard
 
-#### Screen setup ####
+##---- Screen setup ----##
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.title("Turtle Crossing Game")
 screen.tracer(0)
 
-#### spawn classes ####
+##---- spawn classes ----##
 player = Player()
 scoreboard = Scoreboard()
 car_manager = CarManager()
 
-#### keyboard setup ####
+##---- keyboard input setup ----##
 screen.listen()
 screen.onkeypress(player.move,"w")
 screen.onkey(player.respawn, "r")
 screen.onkey(car_manager.spawn_car, "q")
 
 
-#### Game Loop ####
+##---- Game Loop ----##
 game_is_on = True
 while game_is_on:
     screen.update()
@@ -30,12 +30,12 @@ while game_is_on:
 
     car_manager.spawn_car()
 
-    #### Lose condition ####
+    ## Lose condition
     if car_manager.car_crash(player):
         scoreboard.game_over()
         game_is_on = False
 
-    #### Level clear ####
+    ## Level clear
     if player.finish_line():
         car_manager.speed_up()
         scoreboard.level_up()
